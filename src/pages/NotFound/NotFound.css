@@ -1,0 +1,54 @@
+.notfound-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.notfound-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(99,102,241,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.notfound-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.notfound-404 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(6rem, 20vw, 12rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #6366f1, #ec4899, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.notfound-title {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+}
+
+.notfound-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 380px;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}

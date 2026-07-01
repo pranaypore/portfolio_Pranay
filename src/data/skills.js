@@ -1,0 +1,97 @@
+import {
+  SiPython, SiJavascript, SiTypescript,
+  SiReact, SiNextdotjs, SiHtml5, SiTailwindcss,
+  SiMui, SiFramer,
+  SiFastapi, SiDocker, SiGit, SiGithub,
+  SiPostgresql, SiMysql, SiMongodb,
+  SiPostman, SiFigma,
+} from "react-icons/si";
+import { FaJava, FaMobile, FaRobot, FaDatabase, FaServer, FaCss3Alt, FaCode } from "react-icons/fa";
+
+export const skillCategories = [
+  {
+    id: "languages",
+    title: "Programming Languages",
+    icon: "💻",
+    color: "#6366f1",
+    gradient: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+    skills: [
+      { name: "Python", level: 90, icon: SiPython, color: "#3776AB" },
+      { name: "JavaScript", level: 85, icon: SiJavascript, color: "#F7DF1E" },
+      { name: "TypeScript", level: 75, icon: SiTypescript, color: "#3178C6" },
+      { name: "Java", level: 70, icon: FaJava, color: "#ED8B00" },
+      { name: "C", level: 65, icon: FaCode, color: "#A8B9CC" },
+    ],
+  },
+  {
+    id: "frontend",
+    title: "Frontend Development",
+    icon: "🎨",
+    color: "#ec4899",
+    gradient: "linear-gradient(135deg, #ec4899, #f43f5e)",
+    skills: [
+      { name: "React.js", level: 88, icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", level: 75, icon: SiNextdotjs, color: "#ffffff" },
+      { name: "HTML5", level: 92, icon: SiHtml5, color: "#E34F26" },
+      { name: "CSS3", level: 88, icon: FaCss3Alt, color: "#1572B6" },
+      { name: "Tailwind CSS", level: 80, icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Material UI", level: 78, icon: SiMui, color: "#007FFF" },
+      { name: "Framer Motion", level: 72, icon: SiFramer, color: "#BB4B96" },
+    ],
+  },
+  {
+    id: "backend",
+    title: "Backend Development",
+    icon: "⚙️",
+    color: "#10b981",
+    gradient: "linear-gradient(135deg, #10b981, #059669)",
+    skills: [
+      { name: "FastAPI", level: 88, icon: SiFastapi, color: "#009688" },
+      { name: "REST API", level: 90, icon: FaServer, color: "#6366f1" },
+      { name: "JWT Auth", level: 85, icon: FaServer, color: "#f59e0b" },
+    ],
+  },
+  {
+    id: "mobile",
+    title: "Mobile Development",
+    icon: "📱",
+    color: "#f59e0b",
+    gradient: "linear-gradient(135deg, #f59e0b, #f97316)",
+    skills: [
+      { name: "React Native", level: 82, icon: SiReact, color: "#61DAFB" },
+      { name: "Expo", level: 80, icon: SiReact, color: "#000020" },
+      { name: "Android Dev", level: 72, icon: FaMobile, color: "#3DDC84" },
+    ],
+  },
+  {
+    id: "database",
+    title: "Database",
+    icon: "🗄️",
+    color: "#06b6d4",
+    gradient: "linear-gradient(135deg, #06b6d4, #0284c7)",
+    skills: [
+      { name: "PostgreSQL", level: 85, icon: SiPostgresql, color: "#336791" },
+      { name: "MySQL", level: 78, icon: SiMysql, color: "#4479A1" },
+      { name: "MongoDB", level: 72, icon: SiMongodb, color: "#47A248" },
+      { name: "SQLAlchemy", level: 82, icon: FaDatabase, color: "#9b1c1c" },
+      { name: "Alembic", level: 78, icon: FaDatabase, color: "#6366f1" },
+    ],
+  },
+  {
+    id: "devops",
+    title: "DevOps & Tools",
+    icon: "🚀",
+    color: "#8b5cf6",
+    gradient: "linear-gradient(135deg, #8b5cf6, #6366f1)",
+    skills: [
+      { name: "Docker", level: 80, icon: SiDocker, color: "#2496ED" },
+      { name: "Docker Compose", level: 78, icon: SiDocker, color: "#2496ED" },
+      { name: "Git", level: 88, icon: SiGit, color: "#F05032" },
+      { name: "GitHub", level: 88, icon: SiGithub, color: "#ffffff" },
+      { name: "Postman", level: 85, icon: SiPostman, color: "#FF6C37" },
+      { name: "Figma", level: 70, icon: SiFigma, color: "#F24E1E" },
+      { name: "VS Code", level: 92, icon: FaCode, color: "#007ACC" },
+      { name: "Arduino IDE", level: 68, icon: FaRobot, color: "#00979D" },
+    ],
+  },
+];
