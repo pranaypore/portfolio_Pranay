@@ -74,8 +74,8 @@ const About = () => {
             </div>
 
             <p className="bio-text">
-              I'm a <strong>B.Tech Computer Science Engineering</strong> graduate from Alard University,
-              Pune. I specialize in building full-stack applications using <strong>FastAPI</strong>,
+              I'm pursuing a <strong>B.Tech in Computer Science Engineering</strong> at Alard University,
+              Pune (Batch of 2024–2027). I specialize in building full-stack applications using <strong>FastAPI</strong>,
               <strong>React</strong>, <strong>React Native</strong>, and <strong>PostgreSQL</strong>.
             </p>
             <p className="bio-text">
@@ -87,7 +87,7 @@ const About = () => {
             <div className="bio-details">
               <div className="bio-detail">
                 <span className="detail-label">🎓 Education</span>
-                <span className="detail-value">B.Tech CSE — Alard University</span>
+                <span className="detail-value">B.Tech CSE (2024 — 2027) — Alard University</span>
               </div>
               <div className="bio-detail">
                 <span className="detail-label">💼 Availability</span>

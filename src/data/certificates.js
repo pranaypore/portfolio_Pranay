@@ -80,14 +80,6 @@ export const stats = [
 
 export const timeline = [
   {
-    year: "2021",
-    title: "Started B.Tech CSE",
-    org: "Alard University, Pune",
-    description: "Began Computer Science Engineering with focus on programming fundamentals.",
-    type: "education",
-    icon: "🎓",
-  },
-  {
     year: "2022",
     title: "Web Development Journey",
     org: "Self-Learning",
@@ -113,6 +105,14 @@ export const timeline = [
   },
   {
     year: "2024",
+    title: "Started B.Tech CSE",
+    org: "Alard University, Pune",
+    description: "Began Computer Science Engineering with focus on programming fundamentals.",
+    type: "education",
+    icon: "🎓",
+  },
+  {
+    year: "2024",
     title: "React Native & Mobile Dev",
     org: "Self-Learning",
     description: "Expanded into mobile development with React Native Expo for cross-platform apps.",
@@ -128,10 +128,10 @@ export const timeline = [
     icon: "⛏️",
   },
   {
-    year: "2025",
-    title: "B.Tech Graduation",
+    year: "2027",
+    title: "B.Tech Graduation (Expected)",
     org: "Alard University, Pune",
-    description: "Graduated with B.Tech in Computer Science Engineering.",
+    description: "Expected graduation with B.Tech in Computer Science Engineering.",
     type: "education",
     icon: "🎓",
   },
