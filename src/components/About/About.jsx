@@ -161,13 +161,13 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
         >
           <img
-            src="https://github-readme-stats.vercel.app/api?username=pranaypore&show_icons=true&theme=transparent&hide_border=true&text_color=94a3b8&icon_color=6366f1&title_color=6366f1"
+            src="https://github-readme-stats-sigma-five.vercel.app/api?username=pranaypore&show_icons=true&theme=transparent&hide_border=true&text_color=94a3b8&icon_color=6366f1&title_color=6366f1"
             alt="GitHub Stats"
             className="github-stat-img"
             loading="lazy"
           />
           <img
-            src="https://github-readme-streak-stats.herokuapp.com?user=pranaypore&theme=transparent&hide_border=true&stroke=6366f1&ring=6366f1&fire=ec4899&currStreakLabel=94a3b8&sideLabels=94a3b8"
+            src="https://streak-stats.demolab.com?user=pranaypore&theme=transparent&hide_border=true&stroke=6366f1&ring=6366f1&fire=ec4899&currStreakLabel=94a3b8&sideLabels=94a3b8"
             alt="GitHub Streak"
             className="github-stat-img"
             loading="lazy"
