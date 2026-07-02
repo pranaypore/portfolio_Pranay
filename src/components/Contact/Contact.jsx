@@ -85,11 +85,11 @@ const Contact = () => {
     setErrors(prev => ({ ...prev, [e.target.name]: '' }));
   };
 
-  const handleMailtoFallback = () => {
+  const handleEmailFallback = () => {
     const toEmail = 'porepranay552@gmail.com';
     const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || 'N/A'}\n\nMessage:\n${form.message}`;
-    const mailtoUrl = `mailto:${toEmail}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoUrl;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${toEmail}&su=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, '_blank');
   };
 
   const handleSubmit = async (e) => {
@@ -106,10 +106,10 @@ const Contact = () => {
     const isPlaceholder = (val) => !val || val.includes('YOUR_') || val.trim() === '';
 
     if (isPlaceholder(serviceId) || isPlaceholder(templateId) || isPlaceholder(publicKey)) {
-      console.warn('EmailJS environment variables are not configured. Falling back to email client...');
-      toast.error('Form service not configured. Opening your mail client...');
+      console.warn('EmailJS environment variables are not configured. Falling back to Gmail...');
+      toast.error('Form service not configured. Opening Gmail...');
       setTimeout(() => {
-        handleMailtoFallback();
+        handleEmailFallback();
       }, 1000);
       setSending(false);
       return;
@@ -127,9 +127,9 @@ const Contact = () => {
       setForm({ name: '', email: '', phone: '', subject: '', message: '' });
     } catch (err) {
       console.error('EmailJS Error:', err);
-      toast.error('Failed to send. Opening your mail client...');
+      toast.error('Failed to send. Opening Gmail...');
       setTimeout(() => {
-        handleMailtoFallback();
+        handleEmailFallback();
       }, 1000);
     } finally {
       setSending(false);
