@@ -85,24 +85,52 @@ const Contact = () => {
     setErrors(prev => ({ ...prev, [e.target.name]: '' }));
   };
 
+  const handleMailtoFallback = () => {
+    const toEmail = 'porepranay552@gmail.com';
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || 'N/A'}\n\nMessage:\n${form.message}`;
+    const mailtoUrl = `mailto:${toEmail}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
 
     setSending(true);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const isPlaceholder = (val) => !val || val.includes('YOUR_') || val.trim() === '';
+
+    if (isPlaceholder(serviceId) || isPlaceholder(templateId) || isPlaceholder(publicKey)) {
+      console.warn('EmailJS environment variables are not configured. Falling back to email client...');
+      toast.error('Form service not configured. Opening your mail client...');
+      setTimeout(() => {
+        handleMailtoFallback();
+      }, 1000);
+      setSending(false);
+      return;
+    }
+
     try {
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+        serviceId,
+        templateId,
         formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY',
+        publicKey
       );
       setSent(true);
-      toast.success('Message sent! I\'ll get back to you soon 🚀');
+      toast.success("Message sent! I'll get back to you soon 🚀");
       setForm({ name: '', email: '', phone: '', subject: '', message: '' });
-    } catch {
-      toast.error('Failed to send. Please try emailing directly.');
+    } catch (err) {
+      console.error('EmailJS Error:', err);
+      toast.error('Failed to send. Opening your mail client...');
+      setTimeout(() => {
+        handleMailtoFallback();
+      }, 1000);
     } finally {
       setSending(false);
     }
